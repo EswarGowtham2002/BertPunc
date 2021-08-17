@@ -178,7 +178,8 @@ if __name__ == '__main__':
         'learning_rate_all': learning_rate_all,
     }
     save_path = 'models/{}/'.format(datetime.now().strftime("%Y%m%d_%H%M%S"))
-    os.mkdir(save_path)
+    save=Path(save_path)
+    save.mkdir(parents=True)
     with open(save_path+'hyperparameters.json', 'w') as f:
         json.dump(hyperparameters, f)
 
